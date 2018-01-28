@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Main Tools of a Data Scientist}
+\author{Vladimir Garcia}
+\date{January 2018}
+
+\usepackage{natbib}
+\usepackage{enumerate}
+
+\begin{document}
+\maketitle
+
+\begin{itemize}
+\item Measurement
+    \begin{itemize}
+        \item How "insights" or "policies" are constructed
+    \end{itemize}
+\item Statistical Programming Languages
+    \begin{itemize}
+        \item 3 main statistical programming languages: R, Python and Julia
+        \item Different advantages and disadvantages
+        \begin{itemize}
+            \item R: large user base, slow, no for general-purpose computing
+            \item Python: large user base, ubiquity, slow
+            \item Julia: small user base, fast, new program
+        \end{itemize}
+    \end{itemize}
+\item Web Scraping
+    \begin{itemize}
+        \item Data is being constantly collected in publicly accessible places
+        \item How web scraping works?
+            \begin{itemize}
+                \item APIS: employed by Twitter, Facebook, etc. impose limits on data you can download
+                \item Parsing: downloading html files and parsing their text to extract data. Websites monitor IP addresses of all website viewers
+            \end{itemize}
+    \end{itemize}
+\item Handling large data sets
+    \begin{itemize}
+        \item Data sets that are too big to fit on a single hard drive
+        \item you may be able to split the files up into manageable chunks, though no longterm solution
+        \item How to solve this issue?
+            \begin{itemize}
+                \item RDDs (Resilient Distributed Datasets)
+                    \begin{itemize}
+                        \item chops your huge data set into manageable chunks and executes actions on those chunks in parallel
+                        \item withstand any disruption in the computing cluster
+                    \end{itemize}
+                \item SQL
+                    \begin{itemize}
+                        \item transform data into a more usable form for statistical software to use
+                        \item subset, merge, and perform other common data transformations
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\item Visualization
+    \begin{itemize}
+        \item ggplot2 (R)
+        \item matplotlib (Python)
+        \item plots.jl (Julia)
+        \item Tableu
+    \end{itemize}
+\item Modeling
+    \begin{itemize}
+        \item main objectives of statistical modeling are as follows:
+            \begin{enumerate}
+                \item to test theories
+                \item predict behavior
+                \item explain behavior
+            \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+
+
+\end{document}
