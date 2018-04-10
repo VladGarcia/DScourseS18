@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.7in,includefoot]{geometry}
+
+\title{PS10 Garcia}
+\author{Jorge Vladimir Garcia}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+\begin{tabular}{ |p{3cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+ \hline
+ \multicolumn{6}{|c|}{Optimal Values}\\
+ \hline
+ Resample & Tree Models & Logistic Regression & Neural Networks & Nearest Neighbor & SVM\\
+ \hline
+iter 1 & 0.6396959 & 0.6614031 & & 0.7421221 & 0.7295901 \\
+iter 2 & 0.6555495 &  0.6630452 & & 0.7519867 & 0.7517015 \\
+iter 3 & 06781261 &0.6554312 & & 0.7452394 & 0.7507387 \\
+
+Aggregated Result (gmean) & 0.6577905 & 0.6599598 & &0.7464494 &0.7440101\\
+ \hline
+\end{tabular}
+\end{center}
+
+How does each algorithm's out-of-sample performances compare with each of the other algorithms?
+
+\begin{center}
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+ \hline
+ \multicolumn{7}{|c|}{Out-of-sample Performance}\\
+ \hline
+ Prediction & Tree Models & Logistic Regression & Neural Networks & Naive Bayes & Nearest Neighbor & SVM\\
+ \hline
+f1    & 0.8968421 & 0.8989687 & & 0.8974512 & 0.8797084 &0.9042374\\ 
+gmean & 0.6730932 & 0.6741493 & & 0.7535323 & 0.7416732 &0.7638021 \\
+ \hline 
+\end{tabular}
+\end{center}
+
+
+
+\end{document}
