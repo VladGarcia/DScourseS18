@@ -1,0 +1,140 @@
+\documentclass[12pt,english]{article}
+\usepackage{mathptmx}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0.,0.,139.}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lipsum}
+
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{pdflscape}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\linespread{2}
+
+\begin{document}
+
+\begin{singlespace}
+\title{Scholarly Publication and Twitter Usage: An Insight Into the Case of Economists\thanks{Many thanks to Professor Tyler Ransom from the University of Oklahoma Economics Department for providing the research idea and without whom this work would not be possible. }}
+\end{singlespace}
+
+\author{Jorge Vladimir Garcia Perez\thanks{Department of Economics, University of Oklahoma.\
+E-mail~address:~\href{mailto:student.name@ou.edu}{jorgevladimir.garcia@ou.edu}}}
+
+% \date{\today}
+\date{April 14, 2018}
+
+\maketitle
+
+\begin{abstract}
+\begin{singlespace}
+% A short summary of what question the project answers, what methods are used, and any policy (or business) implications from the findings.
+The present study aims to explore the patterns of Twitter usage among economists. I gather data from the website of RePec IDEAS, which contains information on registered economists around the world, their twitter account information, the number of citations they are mentioned in, and the total amount of publications submitted in academic journals. I run an OLS regression to assess the effect of citations and publications on the number of followers and twitter activity an economist will present.   
+% Check REPEC more carefully
+% Include findings in the end.
+\end{singlespace}
+\end{abstract}
+\vfill{}
+
+\pagebreak{}
+
+\section{Introduction}\label{sec:intro}
+\begin{itemize}
+    \item Importance:
+    \begin{itemize}
+        \item Economic research and impact in social media.
+        \item Relevance of Twitter as a platform to share and collaborate.
+    \end{itemize}
+    \item Do more citations/publications have an effect in the number of Twitter followers? Or does the number of twitter followers have an effect in citations/publications?
+    \begin{itemize}
+        \item Reverse causality.
+        \item Research in medical journals about the latter.
+        \item Since we are gathering data from Top 25\% Economists by Twitter followers, I argue that their academic presitge (citations and publications) will have an effect in the number of Twitter followers. 
+    \end{itemize}
+\end{itemize}
+
+\section{Literature Review}\label{sec:litreview}
+Previous work:
+\begin{itemize}
+    \item What drives the number of new twitter followers? An economic note and a case study of professional soccer teams
+        \begin{itemize}
+            \item More successful soccer teams get higher number of followers.
+            \item Possibly explained by higher utility received by spectators from following their soccer teams.
+        \end{itemize}
+    \item Incorporating Twitter, Instagram, and Facebook in Economics Classrooms
+    \item Disciplinary differences in Twitter scholarly communication
+        \begin{itemize}
+            \item Researchers in economics shared the most links.
+            \item Scientific use of Twitter in economics, sociology and history of science appeared to be marginal. 
+            \item No hastags in economics were used more than once.
+        \end{itemize}
+    \item Tweeting Economics are less effective communicators than scientists
+    \item Tweeting economists: antisocial in the socials?
+        \begin{itemize}
+            \item Economists tweet less, mention fewer people and have fewer Twitter conversations with strangers than an comparable group of experts in the sciences. 
+            \item Use less accessible language with words that are more complex and more abbreviations, and their tone is more distant, less personal and less inclusive. 
+        \end{itemize}
+\end{itemize}
+
+\section{Data}\label{sec:data}
+\begin{itemize}
+    \item Data from Top 25\% Economists by Twitter followers from \url{https://ideas.repec.org/top/top.person.twitter.html}
+    \item Data from Authors by number of citations from \url{https://ideas.repec.org/top/top.person.nbcites.html}
+    \item Data from Authors by H-index from \url{https://ideas.repec.org/top/top.person.alldetail.html}
+\end{itemize}
+. Table \ref{tab:descriptives} contains summary statistics.
+\lipsum[1]
+% tab descriptive must not be forgotten (research includes descriptive and inferential statistics)
+
+\section{Empirical Methods}\label{sec:methods}
+While my approach explores a number of different approaches, the primary empirical model can be depicted in the following equation:
+
+\begin{equation}
+\label{eq:1}
+Y_{it}=\alpha_{0} + \alpha_{1}Z_{it} + \alpha_{2} X_{it} + \varepsilon,
+\end{equation}
+where $Y_{it}$ is a continuous outcome variable for unit $i$ in year $t$, and $Z_{it}$ are characteristics about the firm at which $i$ is working, while $X_{it}$ are characteristics about $i$. The parameter of interest is $\alpha_{1}$.
+
+\lipsum[1]
+
+\section{Research Findings}\label{sec:results}
+The main results are reported in Table \ref{tab:estimates}.
+
+\lipsum[1]
+
+\section{Conclusion}\label{sec:conclusion}
+\lipsum[3]
+\nocite{*} %to show references
+
+\vfill
+\pagebreak{}
+\begin{spacing}{1.0}
+\bibliographystyle{jpe}
+\bibliography{References.bib}
+\addcontentsline{toc}{section}{References} % for some reason references are not showing up
+\end{spacing}
+
+\vfill
+\pagebreak{}
+\clearpage
+
+\end{document}
