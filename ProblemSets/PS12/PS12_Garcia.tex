@@ -1,0 +1,106 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.7in,includefoot]{geometry}
+\usepackage{dcolumn}
+
+
+\title{PS12 Garcia}
+\author{Jorge Vladimir Garcia}
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Use stargazer to produce a summary table of this data frame. Include it in your Latex writeup, and discuss whether the results make sense. At what rate are the log wages missing? Do you think the \textit{log wage} variable is most likely to be MCAR, MAR, or MNAR. 
+
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+log wage & 1,545 & 1.652 & 0.688 & $-$0.956 & 4.166 \\ 
+hgc & 2,229 & 12.455 & 2.444 & 5 & 18 \\ 
+exper & 2,229 & 6.435 & 4.867 & 0.000 & 25.000 \\ 
+kids & 2,229 & 0.429 & 0.495 & 0 & 1 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+
+Mean of kids does not make any sense as having 0.429 is not feasible. Mean of years of schooling \textit{hgc}, on the other hand, could be affected by having a greater number of observations with a lot of education, so using the median would be better. Same with with experience variable. 
+
+Also, the \textit{log wage} is more likely to be MAR because it could be the case that people with no college education are more likely to not report their wages. 
+
+    \item Use stargazer to create one regression table which has the estimates of the first three regression models. Include this table in your.tex writeup
+    
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, May 04, 2018 - 11:59:55 PM
+% Requires LaTeX packages: dcolumn 
+\begin{table}[!htbp] \centering 
+  \caption{Results} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{log wage} \\ 
+\\[-1.8ex] & \multicolumn{2}{c}{\textit{OLS}} & \multicolumn{1}{c}{\textit{selection}} \\ 
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)}\\ 
+\hline \\[-1.8ex] 
+ hgc & 0.059^{***} & 0.036^{***} & 0.091^{***} \\ 
+  & (0.009) & (0.006) & (0.010) \\ 
+  & & & \\ 
+ union1 & 0.222^{**} & 0.068 &  \\ 
+  & (0.087) & (0.047) &  \\ 
+  & & & \\ 
+ college1 & -0.065 & -0.126^{***} &  \\ 
+  & (0.106) & (0.048) &  \\ 
+  & & & \\ 
+ union &  &  & 0.186^{**} \\ 
+  &  &  & (0.084) \\ 
+  & & & \\ 
+ college &  &  & 0.092 \\ 
+  &  &  & (0.100) \\ 
+  & & & \\ 
+ exper & 0.050^{***} & 0.021^{***} & 0.054^{***} \\ 
+  & (0.013) & (0.007) & (0.012) \\ 
+  & & & \\ 
+ exper\_sqrd & -0.004^{***} & -0.001^{***} &  \\ 
+  & (0.001) & (0.0004) &  \\ 
+  & & & \\ 
+ I(exper\_Sqr) &  &  & -0.002^{*} \\ 
+  &  &  & (0.001) \\ 
+  & & & \\ 
+ Constant & 0.834^{***} & 1.149^{***} & 0.446^{***} \\ 
+  & (0.113) & (0.078) & (0.122) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & \multicolumn{1}{c}{1,545} & \multicolumn{1}{c}{2,229} & \multicolumn{1}{c}{2,229} \\ 
+R$^{2}$ & \multicolumn{1}{c}{0.038} & \multicolumn{1}{c}{0.020} &  \\ 
+Adjusted R$^{2}$ & \multicolumn{1}{c}{0.035} & \multicolumn{1}{c}{0.018} &  \\ 
+$\rho$ &  &  & \multicolumn{1}{c}{-0.998} \\ 
+Inverse Mills Ratio &  &  & \multicolumn{1}{c}{-0.695^{***}  (0.060)} \\ 
+Residual Std. Error & \multicolumn{1}{c}{0.676 (df = 1539)} & \multicolumn{1}{c}{0.568 (df = 2223)} &  \\ 
+F Statistic & \multicolumn{1}{c}{12.106$^{***}$ (df = 5; 1539)} & \multicolumn{1}{c}{9.207$^{***}$ (df = 5; 2223)} &  \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}  
+
+The parameter $\beta_1$ as it can be seen in the table below, is statistically significant at the same level across all models. The standard error is smallest for the model with mean imputations, because of the means, and the highest for the Heckman model. The effect of \textithgc{hgc} is smaller in the model with imputations as well. 
+
+\item Assess the impat of a counterfactual polify in which wives and mothers are no longer allowed to work in union jobs. Do you think the model you estimated is realistic? Why or why not?
+
+They are exactly the same. I don't know if this is due to some errors with my coding, because I am not sure this is what I was supposed to get. 
+
+\end{enumerate}
+
+\end{document}
